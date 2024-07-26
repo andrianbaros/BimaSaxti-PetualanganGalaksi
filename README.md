@@ -26,24 +26,6 @@ To play "Bima Saxti: Petualangan Galaksi," follow these steps:
 ## Screenshots
 Include some screenshots here to give users a visual sense of the game.
 
-## Contributing
-We welcome contributions from the community! To contribute to "Bima Saxti: Petualangan Galaksi," please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix:
-    ```bash
-    git checkout -b feature/your-feature-name
-    ```
-3. Commit your changes:
-    ```bash
-    git commit -m "Add your commit message here"
-    ```
-4. Push to your branch:
-    ```bash
-    git push origin feature/your-feature-name
-    ```
-5. Open a Pull Request and describe your changes.
-
 ## Contact
 For any inquiries or support, please contact:
 
@@ -52,5 +34,4 @@ Email: [andrianbaros10@gmail.com](mailto:andrianbaros10@gmail.com)
 GitHub: [andrianbaros](https://github.com/andrianbaros)
 
 ## License
-Include information about the licensing of your project here.
 
