@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  IgnorableNamespaces="uap mp">
+
+  <Identity
+    Name="8B72B0A0-0C1B-400F-B700-8FFBDFE62B8D"
+    Version="1.0.0.0"
+    Publisher="CN=Andrian Baros" />
+
+  <mp:PhoneIdentity PhoneProductId="8B72B0A0-0C1B-400F-B700-8FFBDFE62B8D" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+
+  <Properties>
+    <DisplayName>Bima Saxti  Petualangan Galaksi</DisplayName>
+    <PublisherDisplayName>Andrian Baros</PublisherDisplayName>
+    <Logo>images\storelogo.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+
+  <Applications>
+    <Application
+      Id="com.ryuuou.bimasaxti"
+      StartPage="index.html">
+
+      <uap:VisualElements
+        DisplayName="Bima Saxti  Petualangan Galaksi"
+        Description="Embark on an extraordinary journey through the cosmos in "Bima Saxti: Petualangan Galaksi," a captivating 2D platformer that takes players on an educational adventure across our solar system. Join Bima, a young and curious explorer, as he navigates through beautifully crafted levels inspired by the planets."
+        BackgroundColor="#464646"
+        Square150x150Logo="images\Logo.png"
+        Square44x44Logo="images\square44logo.png">
+		
+        <uap:SplashScreen Image="images\splashscreen.png" />
+		
+
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+
+</Package>

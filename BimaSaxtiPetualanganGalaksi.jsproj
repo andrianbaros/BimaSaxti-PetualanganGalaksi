@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+	  <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+	  <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
+      <Platform>x86</Platform>
+	  <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>8B72B0A0-0C1B-400F-B700-8FFBDFE62B8D</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0'">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).Default.props" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).props" />
+  <PropertyGroup>
+	<EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>$(VersionNumberMajor).$(VersionNumberMinor)</MinimumVisualStudioVersion>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    
+  </PropertyGroup>
+  <ItemGroup>
+    <AppxManifest Include="package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <Content Include="images\logo.scale-100.png" />
+    <Content Include="images\square44logo.scale-200.png" />
+    <Content Include="images\splashscreen.scale-100.png" />
+    <Content Include="images\storelogo.scale-100.png" />
+	<Content Include="index.html" />
+	<Content Include="start.js" />
+	<Content Include="data.json" />
+	<Content Include="c2runtime.js" />
+	<Content Include="jquery-3.4.1.min.js" />
+	<Content Include="images\sprite-sheet0.png" />
+	<Content Include="images\tiledbackground.png" />
+	<Content Include="images\tileset_dirt_and_grass_-sheet0.png" />
+	<Content Include="images\tileset_dirt_and_grass_2-sheet0.png" />
+	<Content Include="images\tiktoklogoicon-sheet0.png" />
+	<Content Include="images\asset-sheet0.png" />
+	<Content Include="images\skeletonfly_-sheet0.png" />
+	<Content Include="images\skeletonfly_-sheet1.png" />
+	<Content Include="images\tiledbackground2.png" />
+	<Content Include="images\sprite2-sheet0.png" />
+	<Content Include="images\sprite3-sheet0.png" />
+	<Content Include="images\btn1-sheet0.png" />
+	<Content Include="images\btn1-sheet1.png" />
+	<Content Include="images\btn2-sheet0.png" />
+	<Content Include="images\btn3-sheet0.png" />
+	<Content Include="images\btn4-sheet0.png" />
+	<Content Include="images\mer-sheet0.png" />
+	<Content Include="images\hover05x6-sheet0.png" />
+	<Content Include="images\tiledbackground3.png" />
+	<Content Include="images\btn5-sheet0.png" />
+	<Content Include="images\btn6-sheet0.png" />
+	<Content Include="images\btn7-sheet0.png" />
+	<Content Include="images\btn8-sheet0.png" />
+	<Content Include="images\asset2-sheet0.png" />
+	<Content Include="images\asset3-sheet0.png" />
+	<Content Include="images\batucollect-sheet0.png" />
+	<Content Include="images\sprite4-sheet0.png" />
+	<Content Include="images\mer2-sheet0.png" />
+	<Content Include="images\rocketfinish-sheet0.png" />
+	<Content Include="images\mons-sheet0.png" />
+	<Content Include="images\start-sheet0.png" />
+	<Content Include="images\lava-sheet0.png" />
+	<Content Include="images\backgroundvenusartboard-sheet0.png" />
+	<Content Include="images\tilesvenusasset-sheet0.png" />
+	<Content Include="images\sprite5-sheet0.png" />
+	<Content Include="images\tiledbackground4.png" />
+	<Content Include="images\sprite6-sheet0.png" />
+	<Content Include="images\sprite7-sheet0.png" />
+	<Content Include="images\sprite9-sheet0.png" />
+	<Content Include="images\sprite10-sheet0.png" />
+	<Content Include="images\sprite11-sheet0.png" />
+	<Content Include="images\tiledbackground6.png" />
+	<Content Include="images\tiledbackground7.png" />
+	<Content Include="images\sprite12-sheet0.png" />
+	<Content Include="images\sprite12-sheet1.png" />
+	<Content Include="images\tiledbackground9.png" />
+	<Content Include="images\darkgray__0006_walk_-sheet0.png" />
+	<Content Include="images\darkgray__0006_walk_-sheet1.png" />
+	<Content Include="images\darkgray__0006_walk_-sheet2.png" />
+	<Content Include="images\tiledbackground12.png" />
+	<Content Include="images\sprite13-sheet0.png" />
+	<Content Include="images\tiledbackground13.png" />
+	<Content Include="images\tiledbackground14.png" />
+	<Content Include="images\sprite14-sheet0.png" />
+	<Content Include="images\tiledbackground15.png" />
+	<Content Include="images\gunung-sheet0.png" />
+	<Content Include="images\sprite17-sheet0.png" />
+	<Content Include="images\mercury-sheet0.png" />
+	<Content Include="images\tiledbackground17.png" />
+	<Content Include="images\gemini_generated_image_rrdqdkrrdqdkrrdq-sheet0.png" />
+	<Content Include="images\tilesasset-sheet0.png" />
+	<Content Include="images\tilesbumiasset-sheet0.png" />
+	<Content Include="images\tilesasset2-sheet0.png" />
+	<Content Include="images\sprite18-sheet0.png" />
+	<Content Include="images\sprite19-sheet0.png" />
+	<Content Include="images\sprite20-sheet0.png" />
+	<Content Include="images\mercury2-sheet0.png" />
+	<Content Include="images\sprite22-sheet0.png" />
+	<Content Include="images\1y-sheet0.png" />
+	<Content Include="images\1n-sheet0.png" />
+	<Content Include="images\back-sheet0.png" />
+	<Content Include="images\tiledbackground19.png" />
+	<Content Include="images\picsart_240726_2-sheet0.png" />
+	<Content Include="images\home-sheet0.png" />
+	<Content Include="images\shadedlight-sheet0.png" />
+	<Content Include="images\shadedlight2-sheet0.png" />
+	<Content Include="images\shadedlight3-sheet0.png" />
+	<Content Include="images\1play2-sheet0.png" />
+	<Content Include="icon-16.png" />
+	<Content Include="icon-32.png" />
+	<Content Include="icon-114.png" />
+	<Content Include="icon-128.png" />
+	<Content Include="icon-256.png" />
+	<Content Include="loading-logo.png" />
+
+    
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
+  <!-- To modify your build process, add your task inside one of the targets below then uncomment
+       that target and the DisableFastUpToDateCheck PropertyGroup. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <PropertyGroup>
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+  </PropertyGroup>
+  -->
+</Project>
