@@ -22,11 +22,11 @@ If you prefer to run the game locally, you can clone the repository and set it u
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/andrianbaros/bima-saxti.git
+   git clone https://github.com/andrianbaros/BimaSaxti-PetualanganGalaksi
    ```
 2. Navigate to the project directory:
    ```bash
-   cd bima-saxti
+   cd BimaSaxti-PetualanganGalaksi
    ```
 3. Open the project in your preferred game engine or IDE and follow the build instructions.
 
