@@ -1,5 +1,3 @@
----
-
 # Bima Saxti: Petualangan Galaksi
 
 **Version:** 1.0.0.0
@@ -41,4 +39,3 @@ GitHub: [andrianbaros](https://github.com/andrianbaros)
 ## License
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/andrianbaros/bima-saxti/blob/main/LICENSE) file for details.
 
----
