@@ -30,9 +30,6 @@ If you prefer to run the game locally, you can clone the repository and set it u
    ```
 3. Open the project in your preferred game engine or IDE and follow the build instructions.
 
-## Screenshots
-
-Include some screenshots here to give users a visual sense of the game.
 
 ## Contact
 
