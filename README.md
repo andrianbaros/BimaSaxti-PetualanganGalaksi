@@ -1,3 +1,5 @@
+---
+
 # Bima Saxti: Petualangan Galaksi
 
 **Version:** 1.0.0.0
@@ -10,8 +12,11 @@
 - **Beautiful Art:** Enjoy beautifully designed levels that bring the cosmos to life.
 - **Challenging Gameplay:** Overcome obstacles and solve puzzles as you progress through the game.
 
+## Play Online
+You can play the game online through this link: [Bima Saxti: Petualangan Galaksi](https://andrianbaros.github.io/BimaSaxti-PetualanganGalaksi/).
+
 ## Installation
-To play "Bima Saxti: Petualangan Galaksi," follow these steps:
+If you prefer to run the game locally, you can clone the repository and set it up on your machine:
 
 1. Clone the repository:
     ```bash
@@ -34,4 +39,6 @@ Email: [andrianbaros10@gmail.com](mailto:andrianbaros10@gmail.com)
 GitHub: [andrianbaros](https://github.com/andrianbaros)
 
 ## License
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/andrianbaros/bima-saxti/blob/main/LICENSE) file for details.
 
+---
