@@ -1,136 +1,118 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="id">
 <head>
-    <meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<title>Bima Saxti  Petualangan Galaksi</title>
-	
-	<!-- Standardised web app manifest -->
-	<link rel="manifest" href="appmanifest.json" />
-	
-	<!-- Allow fullscreen mode on iOS devices. (These are Apple specific meta tags.) -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-	<link rel="apple-touch-icon" sizes="256x256" href="icon-256.png" />
-	<meta name="HandheldFriendly" content="true" />
-	
-	<!-- Chrome for Android web app tags -->
-	<meta name="mobile-web-app-capable" content="yes" />
-	<link rel="shortcut icon" sizes="256x256" href="icon-256.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bima Saxti: Petualangan Galaksi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <!-- All margins and padding must be zero for the canvas to fill the screen. -->
-	<style type="text/css">
-		* {
-			padding: 0;
-			margin: 0;
-		}
-		html, body {
-			background: #000;
-			color: #fff;
-			overflow: hidden;
-			touch-action: none;
-			-ms-touch-action: none;
-		}
-		canvas {
-			touch-action-delay: none;
-			touch-action: none;
-			-ms-touch-action: none;
-		}
-    </style>
-	
+    <div id="app-container">
 
-</head> 
- 
-<body> 
-	<div id="fb-root"></div>
-	
-	<script>
-	// Issue a warning if trying to preview an exported project on disk.
-	(function(){
-		// Check for running exported on file protocol
-		if (window.location.protocol.substr(0, 4) === "file")
-		{
-			alert("Exported games won't work until you upload them. (When running on the file:/// protocol, browsers block many features from working for security reasons.)");
-		}
-	})();
-	</script>
-	
-	<!-- The canvas must be inside a div called c2canvasdiv -->
-	<div id="c2canvasdiv">
-	
-		<!-- The canvas the project will render to.  If you change its ID, don't forget to change the
-		ID the runtime looks for in the jQuery events above (ready() and cr_sizeCanvas()). -->
-		<canvas id="c2canvas" width="1136" height="640">
-			<!-- This text is displayed if the visitor's browser does not support HTML5.
-			You can change it, but it is a good idea to link to a description of a browser
-			and provide some links to download some popular HTML5-compatible browsers. -->
-			<h1>Your browser does not appear to support HTML5.  Try upgrading your browser to the latest version.  <a href="http://www.whatbrowser.org">What is a browser?</a>
-			<br/><br/><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx">Microsoft Internet Explorer</a><br/>
-			<a href="http://www.mozilla.com/firefox/">Mozilla Firefox</a><br/>
-			<a href="http://www.google.com/chrome/">Google Chrome</a><br/>
-			<a href="http://www.apple.com/safari/download/">Apple Safari</a></h1>
-		</canvas>
-		
-	</div>
-	
-	<!-- Pages load faster with scripts at the bottom -->
-	
-	<!-- Construct 2 exported games require jQuery. -->
-	<script src="jquery-3.4.1.min.js"></script>
+        <!-- Screen 1: Main Menu -->
+        <div id="main-menu" class="screen">
+            <div class="glass-panel">
+                <h1>Bima Saxti</h1>
+                <p class="subtitle">Petualangan Galaksi Edukasi Tata Surya</p>
+                
+                <div style="display: flex; flex-direction: column; gap: 0.5rem; width: 100%;">
+                    <button class="btn" onclick="showLevelSelector()">Mulai Petualangan</button>
+                    
+                    <div class="settings-panel">
+                        <button class="btn btn-secondary" id="sound-btn" onclick="toggleSound()">Suara: ON</button>
+                        <button class="btn btn-secondary" id="music-btn" onclick="toggleMusic()">Musik: ON</button>
+                    </div>
 
+                    <button class="btn btn-secondary" onclick="resetProgress()" style="margin-top: 1rem; font-size: 0.85rem; padding: 0.6rem;">Reset Data Game</button>
+                </div>
+            </div>
+        </div>
 
-	
-    <!-- The runtime script.  You can rename it, but don't forget to rename the reference here as well.
-    This file will have been minified and obfuscated if you enabled "Minify script" during export. -->
-	<script src="c2runtime.js"></script>
+        <!-- Screen 2: Level Selector -->
+        <div id="level-selector" class="screen hidden">
+            <div class="levels-header">
+                <button class="btn btn-secondary" onclick="goBackToMenu()" style="padding: 0.6rem 1.5rem;">Kembali</button>
+                <h2 style="font-family: 'Outfit', sans-serif; font-size: 2rem;">Pilih Planet Tujuan</h2>
+                <div style="width: 100px;"></div> <!-- Spacer -->
+            </div>
+            
+            <div class="levels-grid" id="levels-grid">
+                <!-- Level cards will be generated by JS -->
+            </div>
+        </div>
 
-    <script>
-		// Start the Construct 2 project running on window load.
-		jQuery(document).ready(function ()
-		{			
-			// Create new runtime using the c2canvas
-			cr_createRuntime("c2canvas");
-		});
-		
-		// Pause and resume on page becoming visible/invisible
-		function onVisibilityChanged() {
-			if (document.hidden || document.mozHidden || document.webkitHidden || document.msHidden)
-				cr_setSuspended(true);
-			else
-				cr_setSuspended(false);
-		};
-		
-		document.addEventListener("visibilitychange", onVisibilityChanged, false);
-		document.addEventListener("mozvisibilitychange", onVisibilityChanged, false);
-		document.addEventListener("webkitvisibilitychange", onVisibilityChanged, false);
-		document.addEventListener("msvisibilitychange", onVisibilityChanged, false);
-		
-		function OnRegisterSWError(e)
-		{
-			console.warn("Failed to register service worker: ", e);
-		};
-		
-		// Runtime calls this global method when ready to start caching (i.e. after startup).
-		// This registers the service worker which caches resources for offline support.
-		window.C2_RegisterSW = function C2_RegisterSW()
-		{
-			if (!navigator.serviceWorker)
-				return;		// no SW support, ignore call
-			
-			try {
-				navigator.serviceWorker.register("sw.js", { scope: "./" })
-				.then(function (reg)
-				{
-					console.log("Registered service worker on " + reg.scope);
-				})
-				.catch(OnRegisterSWError);
-			}
-			catch (e)
-			{
-				OnRegisterSWError(e);
-			}
-		};
-    </script>
-</body> 
-</html> 
+        <!-- Screen 3: Gameplay Canvas Container -->
+        <div id="gameplay-container" class="hidden" style="width: 100%; height: 100%; position: relative;">
+            
+            <!-- Canvas container for responsive scaling -->
+            <div id="canvas-container" style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
+                <canvas id="game-canvas"></canvas>
+            </div>
+
+            <!-- In-game controls overlay (Touch Screen buttons) -->
+            <div class="game-controls">
+                <div class="d-pad">
+                    <button class="ctrl-btn" id="btn-left">◀</button>
+                    <button class="ctrl-btn" id="btn-right">▶</button>
+                </div>
+                <div class="action-pad">
+                    <button class="ctrl-btn" id="btn-jump">▲</button>
+                </div>
+            </div>
+
+            <!-- Top bar quick buttons (Menu/Back) -->
+            <div class="top-bar-controls">
+                <button class="btn btn-secondary" onclick="goBackToMenu()" style="font-size: 0.85rem; padding: 0.5rem 1rem;">Menu Utama</button>
+            </div>
+
+            <!-- Quiz overlay -->
+            <div id="quiz-overlay" class="quiz-overlay hidden">
+                <div class="quiz-box">
+                    <h2>Kuis Pengetahuan Galaksi!</h2>
+                    <p class="quiz-question" id="quiz-question">Pertanyaan kuis...</p>
+                    <div class="quiz-options" id="quiz-options">
+                        <!-- Options generated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal: Level Completed Success -->
+            <div id="level-success-modal" class="modal-overlay hidden">
+                <div class="modal-box success">
+                    <h2>Misi Berhasil! 🚀</h2>
+                    <p id="success-info-text">Informasi misi...</p>
+                    <button class="btn" onclick="nextLevel()">Lanjut ke Planet Berikutnya</button>
+                    <button class="btn btn-secondary" onclick="goBackToMenu()">Menu Utama</button>
+                </div>
+            </div>
+
+            <!-- Modal: Level Failed -->
+            <div id="level-fail-modal" class="modal-overlay hidden">
+                <div class="modal-box fail">
+                    <h2>Misi Gagal! 💥</h2>
+                    <p>Jawaban kamu belum tepat atau Bima terjatuh ke ruang angkasa. Coba lagi untuk melanjutkan petualangan!</p>
+                    <button class="btn" onclick="retryLevel()">Coba Lagi</button>
+                    <button class="btn btn-secondary" onclick="goBackToMenu()">Menu Utama</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Screen 4: Final Victory Screen -->
+        <div id="victory-screen" class="screen hidden">
+            <div class="glass-panel" style="max-width: 650px;">
+                <h1 style="color: #f1c40f; text-shadow: 0 0 20px rgba(241, 196, 15, 0.4);">Selamat! 🌟</h1>
+                <p class="subtitle" style="color: #2ecc71;">Penjelajah Galaksi Utama</p>
+                <p style="margin-bottom: 2rem; line-height: 1.6;">Kamu telah berhasil membimbing Bima menjelajahi seluruh 10 level Tata Surya kita mulai dari Matahari yang panas hingga ke planet terluar Neptunus yang membeku! Kamu sekarang adalah seorang Ahli Astronomi Galaksi!</p>
+                <button class="btn" onclick="goBackToMenu()">Kembali ke Menu</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="secure-storage.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
